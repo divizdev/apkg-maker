@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  apkg-maker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: apkg-maker
+    restart: unless-stopped
+    # если нужен внешний порт:
+    # ports:
+    #   - "8080:8080"
+    environment:
+      - TZ=Europe/Belgrade
+
