@@ -77,8 +77,8 @@ async def make_apkg(data: MakeApkgIn):
                     with open(p, "wb") as f:
                         f.write(content_bytes)
                     media_paths.append(p)
-                    # Если нужен плеер на обороте, раскомментируй:
-                    # back += f'<div style="margin-top:8px;"><audio controls src="{fname}"></audio></div>'
+                    # Добавляем аудио в формате Anki
+                    back += f"[sound:{fname}]"
 
                 note_obj = genanki.Note(
                     model=model,
